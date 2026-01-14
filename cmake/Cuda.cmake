@@ -39,10 +39,4 @@ macro(myproject_target_link_cuda target)
     set_property(TARGET ${target} PROPERTY BUILD_RPATH ${CMAKE_CUDA_IMPLICIT_LINK_DIRECTORIES})
   endif()
 
-  if(WIN32 AND "$ENV{VSCMD_VER}" STREQUAL "")
-    message(
-      WARNING
-        "Compiling CUDA on Windows outside the Visual Studio Command prompt or without running `vcvarsall.bat x64` probably fails"
-    )
-  endif()
 endmacro()
